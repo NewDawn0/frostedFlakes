@@ -1,3 +1,3 @@
 # Frosted flakes
 
-![logo](./.github/imgs/flakes.png|width=100)
+<img src="./.github/imgs/flakes.png" height="50%">
