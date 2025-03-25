@@ -100,28 +100,31 @@
         vocab
       ];
       overlays = map (e: e.overlays.default) inputConfigs;
+      getPkgs = ins:
+        with builtins;
+        filter (e: e != "default") (attrNames (ins.overlays.default { } { }));
+      pkgsList = builtins.concatLists (map getPkgs inputConfigs);
+      pkgsSet = fmt: with builtins; listToAttrs (map fmt pkgsList);
     in {
-      overlays.default = final: prev: {
-        frosted-flakes-all = self.packages.${prev.system}.default;
-        pac = self.packages.${prev.system}.pac;
-      };
+      overlays.default = final: prev:
+        ((pkgsSet (pkg: {
+          name = pkg;
+          value = self.packages.${prev.system}.${pkg};
+        })) // {
+          frosted-flakes = self.packages.${prev.system}.default;
+        });
       packages = utils.lib.eachSystem { inherit overlays; } (pkgs:
         let
-          getPkgs = ins:
-            with builtins;
-            filter (e: e != "default")
-            (attrNames (ins.overlays.default { } { }));
-          pkgsList = builtins.concatLists (map getPkgs inputConfigs);
-          pkgsSet = with builtins;
-            listToAttrs (map (pkg: {
-              name = pkg;
-              value = pkgs.${pkg};
-            }) pkgsList);
-        in pkgsSet // {
-          default = pkgs.symlinkJoin {
-            name = "frosted-flakes-all";
+          frosted-flakes = pkgs.symlinkJoin {
+            name = "frosted-flakes";
             paths = map (p: pkgs.${p}) pkgsList;
           };
+        in (pkgsSet (pkg: {
+          name = pkg;
+          value = pkgs.${pkg};
+        })) // {
+          inherit frosted-flakes;
+          default = frosted-flakes;
         });
     };
 }
