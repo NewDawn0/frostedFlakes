@@ -131,7 +131,7 @@
           name = pkg;
           value = pkgs.${pkg};
         })) // {
-          inherit frosted-flakes;
+          inherit frosted-flakes frosted-flakes-no-configs;
           default = frosted-flakes;
         });
     };
