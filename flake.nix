@@ -78,11 +78,13 @@
 
   outputs = { self, utils, ... }@inputs:
     let
-      inputConfigs = with inputs; [
-        # Configured programs
+      inputConfigsEditor = with inputs; [
         hxConfig
         nvimConfig
         tmuxConfig
+      ];
+      inputConfigs = with inputs; [
+        # Configured programs
         # Bins
         alpha
         ansi
@@ -103,7 +105,8 @@
       getPkgs = ins:
         with builtins;
         filter (e: e != "default") (attrNames (ins.overlays.default { } { }));
-      pkgsList = builtins.concatLists (map getPkgs inputConfigs);
+      pkgsList = builtins.concatLists (map getPkgs (inputConfigs ++ inputConfigsEditor));
+      pkgsListNoConfig = builtins.concatLists (map getPkgs inputConfigs);
       pkgsSet = fmt: with builtins; listToAttrs (map fmt pkgsList);
     in {
       overlays.default = final: prev:
@@ -112,12 +115,17 @@
           value = self.packages.${prev.system}.${pkg};
         })) // {
           frosted-flakes = self.packages.${prev.system}.default;
+          frosted-flakes-no-configs = self.packages.${prev.system}.frosted-flakes-no-configs;
         });
       packages = utils.lib.eachSystem { inherit overlays; } (pkgs:
         let
           frosted-flakes = pkgs.symlinkJoin {
             name = "frosted-flakes";
             paths = map (p: pkgs.${p}) pkgsList;
+          };
+          frosted-flakes-no-configs = pkgs.sysmlinkJoin {
+            name = "frosted-flakes-no-configs";
+            paths = map (p: pkgs.${p}) pkgsListNoConfig;
           };
         in (pkgsSet (pkg: {
           name = pkg;
