@@ -78,12 +78,12 @@
 
   outputs = { self, utils, ... }@inputs:
     let
-      inputConfigsEditor = with inputs; [
+      cfgInputs = with inputs; [
         hxConfig
         nvimConfig
         tmuxConfig
       ];
-      inputConfigs = with inputs; [
+      binInputs = with inputs; [
         # Configured programs
         # Bins
         alpha
@@ -101,12 +101,12 @@
         up
         vocab
       ];
-      overlays = map (e: e.overlays.default) inputConfigs;
+      overlays = map (e: e.overlays.default) (cfgInputs ++ binInputs);
       getPkgs = ins:
         with builtins;
         filter (e: e != "default") (attrNames (ins.overlays.default { } { }));
-      pkgsList = builtins.concatLists (map getPkgs (inputConfigs ++ inputConfigsEditor));
-      pkgsListNoConfig = builtins.concatLists (map getPkgs inputConfigs);
+      pkgsList = builtins.concatLists (map getPkgs (binInputs ++ cfgInputs));
+      pkgsListNoConfig = builtins.concatLists (map getPkgs binInputs);
       pkgsSet = fmt: with builtins; listToAttrs (map fmt pkgsList);
     in {
       overlays.default = final: prev:
