@@ -12,10 +12,7 @@
       url = "github:NewDawn0/hxConfig";
       inputs.utils.follows = "utils";
     };
-    nvimConfig = {
-      url = "github:NewDawn0/nvimConfig";
-      inputs.utils.follows = "utils";
-    };
+    nvimConfig.url = "github:NewDawn0/nvimConfig";
     tmuxConfig = {
       url = "github:NewDawn0/tmuxConfig";
       inputs.utils.follows = "utils";
