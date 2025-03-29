@@ -123,7 +123,7 @@
             name = "frosted-flakes";
             paths = map (p: pkgs.${p}) pkgsList;
           };
-          frosted-flakes-no-configs = pkgs.sysmlinkJoin {
+          frosted-flakes-no-configs = pkgs.symlinkJoin {
             name = "frosted-flakes-no-configs";
             paths = map (p: pkgs.${p}) pkgsListNoConfig;
           };
