@@ -14,9 +14,11 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-unstable
       - run: nix --extra-experimental-features "nix-command flakes pipe-operators" flake update
-      - run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git add flake.lock
-          git commit -m "Update flake.lock"
-          git push origin main
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: '.'
+          author_name: GitHub Actions (Updater)
+          author_email: actions@github.com
+          commit: 'Update flake (automatic)'
+          pull: '--rebase --autostash ...'
+          push: true
