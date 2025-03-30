@@ -115,7 +115,9 @@
         let
           defaults = { cfgs.enable = true; bins.enable = true; };
           frosted-flakes-drv = { cfgs, bins }: let 
-            pkgsList = [] ++ (pkgs.lib.optional cfgs.enable cfgPkgsList) ++ (pkgs.lib.optional bins.enable binPkgsList);
+            pkgsList = [] 
+              ++ (pkgs.lib.lists.optionals cfgs.enable cfgPkgsList)
+              ++ (pkgs.lib.lists.optionals bins.enable binPkgsList);
           in pkgs.symlinkJoin {
             name = "frosted-flakes";
             paths = map (p: pkgs.${p}) pkgsList;
