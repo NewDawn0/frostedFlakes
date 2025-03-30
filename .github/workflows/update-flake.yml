@@ -22,5 +22,4 @@ jobs:
           author_name: GitHub Actions (Updater)
           author_email: actions@github.com
           commit: 'Update flake (automatic)'
-          pull: '--rebase --autostash ...'
           push: true
