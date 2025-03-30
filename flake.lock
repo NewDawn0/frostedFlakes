@@ -261,6 +261,21 @@
         "type": "github"
       }
     },
+    "nix-systems_4": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
     "nixieClock": {
       "inputs": {
         "utils": [
@@ -326,6 +341,21 @@
         "type": "github"
       }
     },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1737253822,
+        "narHash": "sha256-yU7hu+fIUJa+YwPt7Y2rl2R+CuSIwxDESJqqccCEHz0=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "a8815cdd42062c104459947067bd4a92c3ecbbd8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "note": {
       "inputs": {
         "utils": [
@@ -372,9 +402,7 @@
         "build-nvim": "build-nvim",
         "cmp-locked": "cmp-locked",
         "loader-nvim": "loader-nvim",
-        "utils": [
-          "utils"
-        ]
+        "utils": "utils_3"
       },
       "locked": {
         "lastModified": 1743267903,
@@ -429,7 +457,7 @@
         "tmuxConfig": "tmuxConfig",
         "translate": "translate",
         "up": "up",
-        "utils": "utils_3",
+        "utils": "utils_4",
         "vocab": "vocab"
       }
     },
@@ -575,6 +603,25 @@
     "utils_3": {
       "inputs": {
         "nix-systems": "nix-systems_3",
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1742710718,
+        "narHash": "sha256-MN+koGWdg1t4eviMwJn1Clfq7n13iXZ0QBhEgPI+iZI=",
+        "owner": "NewDawn0",
+        "repo": "nixUtils",
+        "rev": "d7689e454a587b8921556e5bce0d94c3f2910f7f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NewDawn0",
+        "repo": "nixUtils",
+        "type": "github"
+      }
+    },
+    "utils_4": {
+      "inputs": {
+        "nix-systems": "nix-systems_4",
         "nixpkgs": [
           "nixpkgs"
         ]

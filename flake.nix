@@ -12,10 +12,7 @@
       url = "github:NewDawn0/hxConfig";
       inputs.utils.follows = "utils";
     };
-    nvimConfig = {
-      url = "github:NewDawn0/nvimConfig";
-      inputs.utils.follows = "utils";
-    };
+    nvimConfig.url = "github:NewDawn0/nvimConfig";
     tmuxConfig = {
       url = "github:NewDawn0/tmuxConfig";
       inputs.utils.follows = "utils";
@@ -78,11 +75,7 @@
 
   outputs = { self, utils, ... }@inputs:
     let
-      cfgInputs = with inputs; [
-        hxConfig
-        nvimConfig
-        tmuxConfig
-      ];
+      cfgInputs = with inputs; [ hxConfig nvimConfig tmuxConfig ];
       binInputs = with inputs; [
         # Configured programs
         # Bins
@@ -115,7 +108,8 @@
           value = self.packages.${prev.system}.${pkg};
         })) // {
           frosted-flakes = self.packages.${prev.system}.default;
-          frosted-flakes-no-configs = self.packages.${prev.system}.frosted-flakes-no-configs;
+          frosted-flakes-no-configs =
+            self.packages.${prev.system}.frosted-flakes-no-configs;
         });
       packages = utils.lib.eachSystem { inherit overlays; } (pkgs:
         let
@@ -132,7 +126,7 @@
           value = pkgs.${pkg};
         })) // {
           inherit frosted-flakes frosted-flakes-no-configs;
-          default = frosted-flakes;
+          default = frosted-flakes-no-configs;
         });
     };
 }
