@@ -75,12 +75,12 @@
 
   outputs = { self, utils, ... }@inputs:
     let
-      allInputs = with inputs; [
-        # Configured programs
+      cfgInputs = with inputs; [
         hxConfig
         nvimConfig
         tmuxConfig
-        # Bins
+      ];
+      binInputs = with inputs; [
         alpha
         ansi
         asciiWeather
@@ -96,12 +96,13 @@
         up
         vocab
       ];
-      overlays = map (e: e.overlays.default) allInputs;
+      overlays = map (e: e.overlays.default) (cfgInputs ++ binInputs);
       getPkgs = ins:
         with builtins;
         filter (e: e != "default") (attrNames (ins.overlays.default { } { }));
-      pkgsList = builtins.concatLists (map getPkgs allInputs);
-      pkgsSet = fmt: with builtins; listToAttrs (map fmt pkgsList);
+      cfgPkgsList = builtins.concatLists (map getPkgs cfgInputs);
+      binPkgsList = builtins.concatLists (map getPkgs binInputs);
+      pkgsSet = fmt: with builtins; listToAttrs (map fmt (cfgPkgsList ++ binPkgsList));
     in {
       overlays.default = final: prev:
         ((pkgsSet (pkg: {
@@ -109,15 +110,17 @@
           value = self.packages.${prev.system}.${pkg};
         })) // {
           frosted-flakes = self.packages.${prev.system}.default;
-          frosted-flakes-no-configs =
-            self.packages.${prev.system}.frosted-flakes-no-configs;
         });
       packages = utils.lib.eachSystem { inherit overlays; } (pkgs:
         let
-          frosted-flakes = pkgs.symlinkJoin {
+          defaults = { cfgs.enable = true; bins.enable = true; };
+          frosted-flakes-drv = { cfgs, bins }: let 
+            pkgsList = [] ++ (pkgs.lib.optional cfgs.enable cfgPkgsList) ++ (pkgs.lib.optional bins.enable binPkgsList);
+          in pkgs.symlinkJoin {
             name = "frosted-flakes";
             paths = map (p: pkgs.${p}) pkgsList;
           };
+          frosted-flakes = pkgs.lib.makeOverridable frosted-flakes-drv defaults;
         in (pkgsSet (pkg: {
           name = pkg;
           value = pkgs.${pkg};
