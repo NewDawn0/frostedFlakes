@@ -17,6 +17,10 @@
       url = "github:NewDawn0/tmuxConfig";
       inputs.utils.follows = "utils";
     };
+    vscodeConfig = {
+      url = "github:NewDawn0/vscodeConfig";
+      inputs.utils.follows = "utils";
+    };
     # Bins
     alpha = {
       url = "github:NewDawn0/alpha";
@@ -75,11 +79,7 @@
 
   outputs = { self, utils, ... }@inputs:
     let
-      cfgInputs = with inputs; [
-        hxConfig
-        nvimConfig
-        tmuxConfig
-      ];
+      cfgInputs = with inputs; [ hxConfig nvimConfig tmuxConfig vscodeConfig ];
       binInputs = with inputs; [
         alpha
         ansi
@@ -102,7 +102,9 @@
         filter (e: e != "default") (attrNames (ins.overlays.default { } { }));
       cfgPkgsList = builtins.concatLists (map getPkgs cfgInputs);
       binPkgsList = builtins.concatLists (map getPkgs binInputs);
-      pkgsSet = fmt: with builtins; listToAttrs (map fmt (cfgPkgsList ++ binPkgsList));
+      pkgsSet = fmt:
+        with builtins;
+        listToAttrs (map fmt (cfgPkgsList ++ binPkgsList));
     in {
       overlays.default = final: prev:
         ((pkgsSet (pkg: {
@@ -113,15 +115,19 @@
         });
       packages = utils.lib.eachSystem { inherit overlays; } (pkgs:
         let
-          defaults = { cfgs.enable = true; bins.enable = true; };
-          frosted-flakes-drv = { cfgs, bins }: let 
-            pkgsList = [] 
-              ++ (pkgs.lib.lists.optionals cfgs.enable cfgPkgsList)
-              ++ (pkgs.lib.lists.optionals bins.enable binPkgsList);
-          in pkgs.symlinkJoin {
-            name = "frosted-flakes";
-            paths = map (p: pkgs.${p}) pkgsList;
+          defaults = {
+            cfgs.enable = true;
+            bins.enable = true;
           };
+          frosted-flakes-drv = { cfgs, bins }:
+            let
+              pkgsList = [ ]
+                ++ (pkgs.lib.lists.optionals cfgs.enable cfgPkgsList)
+                ++ (pkgs.lib.lists.optionals bins.enable binPkgsList);
+            in pkgs.symlinkJoin {
+              name = "frosted-flakes";
+              paths = map (p: pkgs.${p}) pkgsList;
+            };
           frosted-flakes = pkgs.lib.makeOverridable frosted-flakes-drv defaults;
         in (pkgsSet (pkg: {
           name = pkg;
