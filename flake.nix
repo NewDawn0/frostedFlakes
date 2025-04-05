@@ -2,11 +2,7 @@
   description = "A collection of deliciously declarative packages";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs";
-    utils = {
-      url = "github:NewDawn0/nixUtils";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    utils.url = "github:NewDawn0/nixUtils";
     # Configured programs
     hxConfig = {
       url = "github:NewDawn0/hxConfig";
@@ -29,7 +25,10 @@
       url = "github:NewDawn0/alpha";
       inputs.utils.follows = "utils";
     };
-    ansi.url = "github:NewDawn0/ansi";
+    ansi = {
+      url = "github:NewDawn0/ansi";
+      inputs.utils.follows = "utils";
+    };
     asciiWeather = {
       url = "github:NewDawn0/asciiWeather";
       inputs.utils.follows = "utils";
