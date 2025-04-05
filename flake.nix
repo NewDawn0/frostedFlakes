@@ -1,5 +1,5 @@
 {
-  description = "Your awesome flake";
+  description = "A collection of deliciously declarative packages";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
