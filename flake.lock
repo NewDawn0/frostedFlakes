@@ -2,7 +2,9 @@
   "nodes": {
     "alpha": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1742712617,
@@ -20,7 +22,9 @@
     },
     "ansi": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743864586,
@@ -38,7 +42,9 @@
     },
     "asciiWeather": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743862284,
@@ -56,7 +62,10 @@
     },
     "b16-nvim": {
       "inputs": {
-        "utils": ["nvimConfig", "utils"]
+        "utils": [
+          "nvimConfig",
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743264965,
@@ -71,7 +80,10 @@
     },
     "build-nvim": {
       "inputs": {
-        "utils": ["nvimConfig", "utils"]
+        "utils": [
+          "nvimConfig",
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1742711049,
@@ -107,7 +119,9 @@
     },
     "dirStack": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743862333,
@@ -125,7 +139,9 @@
     },
     "ex": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743862354,
@@ -143,7 +159,9 @@
     },
     "gen": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743862437,
@@ -161,7 +179,9 @@
     },
     "hxConfig": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743863626,
@@ -179,7 +199,10 @@
     },
     "loader-nvim": {
       "inputs": {
-        "utils": ["nvimConfig", "utils"]
+        "utils": [
+          "nvimConfig",
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743139712,
@@ -227,7 +250,9 @@
     },
     "nixieClock": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743862953,
@@ -260,41 +285,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1743858924,
-        "narHash": "sha256-DvcmudX67A5nATO0Lu8jHVtL5xk7KZmAEfab1NSozW4=",
+        "lastModified": 1743851869,
+        "narHash": "sha256-v4CJiNuMoTOorG8h3A5xmBh7WVIeT6UTgiNJIIl512E=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "446ca1db83c11fc9bb469918c9f31d8a84c9b342",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1737253822,
-        "narHash": "sha256-yU7hu+fIUJa+YwPt7Y2rl2R+CuSIwxDESJqqccCEHz0=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "a8815cdd42062c104459947067bd4a92c3ecbbd8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_4": {
-      "locked": {
-        "lastModified": 1743854730,
-        "narHash": "sha256-3rkH7dMDgsYwG4Y5JiAzRN9VWBQdocO8cHEEqp3nbrw=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "6c601a5874dcb7d2654a935c447d11f9d8b28809",
+        "rev": "4e5bc90b70299b3be5b8090d694cfcd279a22dca",
         "type": "github"
       },
       "original": {
@@ -305,7 +300,9 @@
     },
     "note": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743863407,
@@ -323,7 +320,9 @@
     },
     "notify": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743863428,
@@ -345,7 +344,9 @@
         "build-nvim": "build-nvim",
         "cmp-locked": "cmp-locked",
         "loader-nvim": "loader-nvim",
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743864864,
@@ -363,7 +364,9 @@
     },
     "pac": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743863569,
@@ -404,7 +407,9 @@
     },
     "shredder": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743863472,
@@ -422,7 +427,9 @@
     },
     "tmuxConfig": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743862666,
@@ -440,7 +447,9 @@
     },
     "translate": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743863603,
@@ -458,7 +467,10 @@
     },
     "translate_2": {
       "inputs": {
-        "utils": ["vocab", "utils"]
+        "utils": [
+          "vocab",
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743863603,
@@ -476,7 +488,9 @@
     },
     "up": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743863601,
@@ -533,7 +547,9 @@
     "vocab": {
       "inputs": {
         "translate": "translate_2",
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743863741,
@@ -551,7 +567,9 @@
     },
     "vscodeConfig": {
       "inputs": {
-        "utils": ["utils"]
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1743863282,
