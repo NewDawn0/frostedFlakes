@@ -19,10 +19,6 @@
       url = "github:NewDawn0/alpha";
       inputs.utils.follows = "utils";
     };
-    ansi = {
-      url = "github:NewDawn0/ansi";
-      inputs.utils.follows = "utils";
-    };
     asciiWeather = {
       url = "github:NewDawn0/asciiWeather";
       inputs.utils.follows = "utils";
@@ -78,7 +74,6 @@
       cfgInputs = with inputs; [ hxConfig nvimConfig tmuxConfig vscodeConfig ];
       binInputs = with inputs; [
         alpha
-        ansi
         asciiWeather
         dirStack
         ex
