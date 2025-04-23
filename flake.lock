@@ -97,26 +97,6 @@
         "type": "github"
       }
     },
-    "dir-stack": {
-      "inputs": {
-        "utils": [
-          "utils"
-        ]
-      },
-      "locked": {
-        "lastModified": 1745390184,
-        "narHash": "sha256-gG340P51QWT0OSWsqfNWEomqez8TQYVjLYxYXJTMt5I=",
-        "owner": "NewDawn0",
-        "repo": "dirStack",
-        "rev": "f6486976c1a2f3c2f15e30a0b6028354743bd472",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NewDawn0",
-        "repo": "dirStack",
-        "type": "github"
-      }
-    },
     "ex": {
       "inputs": {
         "utils": [
@@ -518,7 +498,6 @@
       "inputs": {
         "alpha": "alpha",
         "ascii-weather": "ascii-weather",
-        "dir-stack": "dir-stack",
         "ex": "ex",
         "gen": "gen",
         "ndhelix": "ndhelix",
