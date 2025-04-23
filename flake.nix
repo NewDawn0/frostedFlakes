@@ -20,10 +20,6 @@
       url = "github:NewDawn0/asciiWeather";
       inputs.utils.follows = "utils";
     };
-    dir-stack = {
-      url = "github:NewDawn0/dirStack";
-      inputs.utils.follows = "utils";
-    };
     ex = {
       url = "github:NewDawn0/ex";
       inputs.utils.follows = "utils";
@@ -66,7 +62,6 @@
         bins = [
           "alpha"
           "ascii-weather"
-          "dir-stack"
           "ex"
           "gen"
           "nixie-clock"
