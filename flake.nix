@@ -90,7 +90,7 @@
       outOverlays = with builtins;
         listToAttrs (map (e: {
           name = e;
-          value = self.packages.${e};
+          value = self.packages.${prev.system}.${e};
         }) allPkgs);
     in {
       overlays.default = final: prev:
