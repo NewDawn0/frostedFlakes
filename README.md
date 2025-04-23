@@ -13,21 +13,21 @@
 
 <!-- vim-markdown-toc GFM -->
 
-* [🌀 What is Frosted Flakes?](#-what-is-frosted-flakes)
-* [🏆 Why Choose Frosted Flakes?](#-why-choose-frosted-flakes)
-* [📦 Included Packages](#-included-packages)
-    * [🖥️ Configurations (Your Editors & Terminal, Pre-Loaded)](#-configurations-your-editors--terminal-pre-loaded)
-    * [🛠️ Utilities (Small but Mighty)](#-utilities-small-but-mighty)
-    * [📁 Navigation & File Management](#-navigation--file-management)
-    * [🔧 Dev & Productivity Tools](#-dev--productivity-tools)
-    * [🔢 Miscellaneous (But Still Awesome)](#-miscellaneous-but-still-awesome)
-    * [🏆 The Ultimate Flake](#-the-ultimate-flake)
-* [🚀 Getting Your Daily Dose of Flakes](#-getting-your-daily-dose-of-flakes)
-    * [🍽️ Running with `nix shell`](#-running-with-nix-shell)
-    * [🛠️ Installing a Single Package](#-installing-a-single-package)
-    * [📦 Applying as an Overlay](#-applying-as-an-overlay)
-* [📜 License](#-license)
-* [🔗 Links](#-links)
+- [🌀 What is Frosted Flakes?](#-what-is-frosted-flakes)
+- [🏆 Why Choose Frosted Flakes?](#-why-choose-frosted-flakes)
+- [📦 Included Packages](#-included-packages)
+  - [🖥️ Configurations (Your Editors & Terminal, Pre-Loaded)](#-configurations-your-editors--terminal-pre-loaded)
+  - [🛠️ Utilities (Small but Mighty)](#-utilities-small-but-mighty)
+  - [📁 Navigation & File Management](#-navigation--file-management)
+  - [🔧 Dev & Productivity Tools](#-dev--productivity-tools)
+  - [🔢 Miscellaneous (But Still Awesome)](#-miscellaneous-but-still-awesome)
+  - [🏆 The Ultimate Flake](#-the-ultimate-flake)
+- [🚀 Getting Your Daily Dose of Flakes](#-getting-your-daily-dose-of-flakes)
+  - [🍽️ Running with `nix shell`](#-running-with-nix-shell)
+  - [🛠️ Installing a Single Package](#-installing-a-single-package)
+  - [📦 Applying as an Overlay](#-applying-as-an-overlay)
+- [📜 License](#-license)
+- [🔗 Links](#-links)
 
 <!-- vim-markdown-toc -->
 
@@ -59,6 +59,7 @@ Because what’s a flake collection without actual flakes? Here’s what’s ins
 
 - **[hxConfig](https://github.com/NewDawn0/hxConfig)** – Fully setup, runnable Helix configuration. No tweaking needed. 🚀
 - **[nvimConfig](https://github.com/NewDawn0/nvimConfig)** – A pre-configured Neovim setup for instant productivity. 🎨
+- **[vscodeConfig](https://github.com/NewDawn0/vscodeConfig)** – Basic runnable configured VS-Code setup. ⚙️
 - **[tmuxConfig](https://github.com/NewDawn0/tmuxConfig)** – tmux, but better. Fully set up and ready to roll. 🎛️
 
 ### 🛠️ Utilities (Small but Mighty)
@@ -72,7 +73,6 @@ Because what’s a flake collection without actual flakes? Here’s what’s ins
 - **[dirStack](https://github.com/NewDawn0/dirStack)** – Instantly jump between frequently used directories. Like bookmarks, but for your terminal. 📂
 - **[ex](https://github.com/NewDawn0/ex)** – One command to extract them all (ZIP, TAR, and more). 🗃️
 - **[shredder](https://github.com/NewDawn0/shredder)** – Secure file deletion for the truly paranoid. 🕵️
-- **[up](https://github.com/NewDawn0/up)** – Navigate up directories with fewer keystrokes. Goodbye `cd ../../../..`. ⬆️
 
 ### 🔧 Dev & Productivity Tools
 

@@ -1,16 +1,13 @@
 {
-  description = "A collection of deliciously declarative packages";
+  description = "Your awesome flake";
 
   inputs = {
     utils.url = "github:NewDawn0/nixUtils";
     # Configured programs
-    hxConfig = {
-      url = "github:NewDawn0/hxConfig";
-      inputs.utils.follows = "utils";
-    };
-    nvimConfig.url = "github:NewDawn0/nvimConfig";
-    vscodeConfig.url = "github:NewDawn0/vscodeConfig";
-    tmuxConfig = {
+    ndnvim.url = "github:NewDawn0/nvimConfig";
+    ndvscode.url = "github:NewDawn0/vscodeConfig";
+    ndhelix.url = "github:NewDawn0/hxConfig";
+    ndtmux = {
       url = "github:NewDawn0/tmuxConfig";
       inputs.utils.follows = "utils";
     };
@@ -19,11 +16,11 @@
       url = "github:NewDawn0/alpha";
       inputs.utils.follows = "utils";
     };
-    asciiWeather = {
+    ascii-weather = {
       url = "github:NewDawn0/asciiWeather";
       inputs.utils.follows = "utils";
     };
-    dirStack = {
+    dir-stack = {
       url = "github:NewDawn0/dirStack";
       inputs.utils.follows = "utils";
     };
@@ -35,7 +32,7 @@
       url = "github:NewDawn0/gen";
       inputs.utils.follows = "utils";
     };
-    nixieClock = {
+    nixie-clock = {
       url = "github:NewDawn0/nixieClock";
       inputs.utils.follows = "utils";
     };
@@ -47,20 +44,13 @@
       url = "github:NewDawn0/notify";
       inputs.utils.follows = "utils";
     };
-    pac = {
-      url = "github:NewDawn0/pac";
-      inputs.utils.follows = "utils";
-    };
+    pac.url = "github:NewDawn0/pac";
     shredder = {
       url = "github:NewDawn0/shredder";
       inputs.utils.follows = "utils";
     };
     translate = {
       url = "github:NewDawn0/translate";
-      inputs.utils.follows = "utils";
-    };
-    up = {
-      url = "github:NewDawn0/up";
       inputs.utils.follows = "utils";
     };
     vocab = {
@@ -71,37 +61,40 @@
 
   outputs = { self, utils, ... }@inputs:
     let
-      cfgInputs = with inputs; [ hxConfig nvimConfig tmuxConfig vscodeConfig ];
-      binInputs = with inputs; [
-        alpha
-        asciiWeather
-        dirStack
-        ex
-        gen
-        nixieClock
-        note
-        notify
-        pac
-        shredder
-        translate
-        up
-        vocab
-      ];
-      overlays = map (e: e.overlays.default) (cfgInputs ++ binInputs);
-      getPkgs = ins:
+      ins = {
+        cfgs = [ "ndhelix" "ndnvim" "ndtmux" "ndvscode" ];
+        bins = [
+          "alpha"
+          "ascii-weather"
+          "dir-stack"
+          "ex"
+          "gen"
+          "nixie-clock"
+          "note"
+          "notify"
+          "pac"
+          "shredder"
+          "translate"
+          "vocab"
+        ];
+      };
+      overlays = map (e: inputs.${e}.overlays.default) (ins.bins ++ ins.cfgs);
+      allPkgs = with builtins;
+        concatLists (map attrNames (map (e: e { } { }) overlays));
+      outPkgs = pkgs:
         with builtins;
-        filter (e: e != "default") (attrNames (ins.overlays.default { } { }));
-      cfgPkgsList = builtins.concatLists (map getPkgs cfgInputs);
-      binPkgsList = builtins.concatLists (map getPkgs binInputs);
-      pkgsSet = fmt:
-        with builtins;
-        listToAttrs (map fmt (cfgPkgsList ++ binPkgsList));
+        listToAttrs (map (e: {
+          name = e;
+          value = pkgs.${e};
+        }) allPkgs);
+      outOverlays = with builtins;
+        listToAttrs (map (e: {
+          name = e;
+          value = self.packages.${e};
+        }) allPkgs);
     in {
       overlays.default = final: prev:
-        ((pkgsSet (pkg: {
-          name = pkg;
-          value = self.packages.${prev.system}.${pkg};
-        })) // {
+        (outOverlays // {
           frosted-flakes = self.packages.${prev.system}.default;
         });
       packages = utils.lib.eachSystem { inherit overlays; } (pkgs:
@@ -110,22 +103,16 @@
             cfgs.enable = true;
             bins.enable = true;
           };
-          frosted-flakes-drv = { cfgs, bins }:
-            let
-              pkgsList = [ ]
-                ++ (pkgs.lib.lists.optionals cfgs.enable cfgPkgsList)
-                ++ (pkgs.lib.lists.optionals bins.enable binPkgsList);
-            in pkgs.symlinkJoin {
+          frosted-flakes = { cfgs, bins }:
+            pkgs.symlinkJoin {
               name = "frosted-flakes";
-              paths = map (p: pkgs.${p}) pkgsList;
+              paths = [ ] ++ (pkgs.lib.lists.optionals bins.enable
+                (map (e: pkgs.${e}) ins.bins))
+                ++ (pkgs.lib.lists.optionals cfgs.enable
+                  (map (e: pkgs.${e}) ins.cfgs));
             };
-          frosted-flakes = pkgs.lib.makeOverridable frosted-flakes-drv defaults;
-        in (pkgsSet (pkg: {
-          name = pkg;
-          value = pkgs.${pkg};
-        })) // {
-          inherit frosted-flakes;
-          default = frosted-flakes;
+        in (outPkgs pkgs) // {
+          default = pkgs.lib.makeOverridable frosted-flakes defaults;
         });
     };
 }
