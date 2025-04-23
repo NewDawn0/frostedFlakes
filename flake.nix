@@ -87,14 +87,15 @@
           name = e;
           value = pkgs.${e};
         }) allPkgs);
-      outOverlays = with builtins;
+      outOverlays = prev:
+        with builtins;
         listToAttrs (map (e: {
           name = e;
           value = self.packages.${prev.system}.${e};
         }) allPkgs);
     in {
       overlays.default = final: prev:
-        (outOverlays // {
+        ((outOverlays prev) // {
           frosted-flakes = self.packages.${prev.system}.default;
         });
       packages = utils.lib.eachSystem { inherit overlays; } (pkgs:
