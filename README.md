@@ -57,10 +57,13 @@ Because what’s a flake collection without actual flakes? Here’s what’s ins
 
 ### 🖥️ Configurations (Your Editors & Terminal, Pre-Loaded)
 
-- **[hxConfig](https://github.com/NewDawn0/hxConfig)** – Fully setup, runnable Helix configuration. No tweaking needed. 🚀
-- **[nvimConfig](https://github.com/NewDawn0/nvimConfig)** – A pre-configured Neovim setup for instant productivity. 🎨
-- **[vscodeConfig](https://github.com/NewDawn0/vscodeConfig)** – Basic runnable configured VS-Code setup. ⚙️
-- **[tmuxConfig](https://github.com/NewDawn0/tmuxConfig)** – tmux, but better. Fully set up and ready to roll. 🎛️
+> 💡 **Need a zsh setup that slaps right out the box?**
+> Check out [shellConfig](https://github.com/NewDawn0/shellConfig) for a shell so slick it basically types for you. 🐚💨
+
+- **[hxConfig](https://github.com/NewDawn0/hxConfig)** – Helix so prepped, you’ll think it's reading your mind. Minimal setup, max vibe. 🧠✨
+- **[nvimConfig](https://github.com/NewDawn0/nvimConfig)** – Neovim with _actual superpowers_. Looks good, feels good, works like black magic. 🔮
+- **[vscodeConfig](https://github.com/NewDawn0/vscodeConfig)** – VS Code, but already knows what extensions you’ll install anyway. 📦🔍
+- **[tmuxConfig](https://github.com/NewDawn0/tmuxConfig)** – Like tmux... but with taste. Windows, panes, and keybinds that make sense. 🪟🔧
 
 ### 🛠️ Utilities (Small but Mighty)
 
@@ -70,7 +73,6 @@ Because what’s a flake collection without actual flakes? Here’s what’s ins
 
 ### 📁 Navigation & File Management
 
-- **[dirStack](https://github.com/NewDawn0/dirStack)** – Instantly jump between frequently used directories. Like bookmarks, but for your terminal. 📂
 - **[ex](https://github.com/NewDawn0/ex)** – One command to extract them all (ZIP, TAR, and more). 🗃️
 - **[shredder](https://github.com/NewDawn0/shredder)** – Secure file deletion for the truly paranoid. 🕵️
 
@@ -89,7 +91,7 @@ Because what’s a flake collection without actual flakes? Here’s what’s ins
 
 ### 🏆 The Ultimate Flake
 
-- **[frosted-flakes](https://github.com/NewDawn0/frostedFlakes)** – The complete collection. Just install this and enjoy all the goodness at once. 🥣
+- **[frosted-flakes](https://github.com/NewDawn0/frostedFlakes)** – The complete collection. Just install this and enjoy all the goodness at once.
 
 ## 🚀 Getting Your Daily Dose of Flakes
 
