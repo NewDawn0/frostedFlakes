@@ -8,16 +8,10 @@
       url = "github:NewDawn0/hxConfig";
       inputs.utils.follows = "utils";
     };
-    nvimConfig = {
-      url = "github:NewDawn0/nvimConfig";
-      inputs.utils.follows = "utils";
-    };
+    nvimConfig.url = "github:NewDawn0/nvimConfig";
+    vscodeConfig.url = "github:NewDawn0/vscodeConfig";
     tmuxConfig = {
       url = "github:NewDawn0/tmuxConfig";
-      inputs.utils.follows = "utils";
-    };
-    vscodeConfig = {
-      url = "github:NewDawn0/vscodeConfig";
       inputs.utils.follows = "utils";
     };
     # Bins
