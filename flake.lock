@@ -2,16 +2,17 @@
   "nodes": {
     "alpha": {
       "inputs": {
+        "nixpkgs": "nixpkgs",
         "utils": [
           "utils"
         ]
       },
       "locked": {
-        "lastModified": 1742712617,
-        "narHash": "sha256-UmZsbFU4sbgAGS8NrFLBdKnKtW485DTvLhSO5uduHUk=",
+        "lastModified": 1747418425,
+        "narHash": "sha256-7tAan7pYxX96b6XTmSfpJBp9M5ccurtdP/o2M/LExv4=",
         "owner": "NewDawn0",
         "repo": "alpha",
-        "rev": "d4078d8df5ae3eef972bac3e124e17195642ad88",
+        "rev": "0819a4dccb8ff90a398f6ec8c6ab7b7b8903b680",
         "type": "github"
       },
       "original": {
@@ -84,7 +85,7 @@
     },
     "cmp-locked-nvim": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "utils": "utils_2"
       },
       "locked": {
@@ -186,7 +187,7 @@
         "build-nvim": "build-nvim",
         "cmp-locked-nvim": "cmp-locked-nvim",
         "loader-nvim": "loader-nvim",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_4",
         "utils": "utils_3"
       },
       "locked": {
@@ -353,6 +354,21 @@
     },
     "nixpkgs": {
       "locked": {
+        "lastModified": 1747405164,
+        "narHash": "sha256-6IOwol+mvP3Ytw9lmT4DyWtYZnP9SheCPoJDZ2HmTa8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "04d6d96682f0c802398472657de4b08cc5c1d4e3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
         "lastModified": 1743851869,
         "narHash": "sha256-v4CJiNuMoTOorG8h3A5xmBh7WVIeT6UTgiNJIIl512E=",
         "owner": "nixos",
@@ -362,21 +378,6 @@
       },
       "original": {
         "owner": "nixos",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1746541067,
-        "narHash": "sha256-dmp9ZPfYj+CaaHY831blMpWEucee6KZe1qx7j8DKm+E=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "39b847c159e9e9a1b8ee56b50099b734f5a7c637",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -398,15 +399,15 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1743851869,
-        "narHash": "sha256-v4CJiNuMoTOorG8h3A5xmBh7WVIeT6UTgiNJIIl512E=",
-        "owner": "nixos",
+        "lastModified": 1746541067,
+        "narHash": "sha256-dmp9ZPfYj+CaaHY831blMpWEucee6KZe1qx7j8DKm+E=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4e5bc90b70299b3be5b8090d694cfcd279a22dca",
+        "rev": "39b847c159e9e9a1b8ee56b50099b734f5a7c637",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
+        "owner": "NixOS",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -427,6 +428,21 @@
       }
     },
     "nixpkgs_6": {
+      "locked": {
+        "lastModified": 1743851869,
+        "narHash": "sha256-v4CJiNuMoTOorG8h3A5xmBh7WVIeT6UTgiNJIIl512E=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "4e5bc90b70299b3be5b8090d694cfcd279a22dca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_7": {
       "locked": {
         "lastModified": 1745388855,
         "narHash": "sha256-sdyvuJSENo9SCUZ4ltqEQkOKb2L/139wW4h8y1b1pns=",
@@ -583,7 +599,7 @@
     "utils": {
       "inputs": {
         "nix-systems": "nix-systems",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
         "lastModified": 1743862127,
@@ -647,7 +663,7 @@
     "utils_4": {
       "inputs": {
         "nix-systems": "nix-systems_4",
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_5"
       },
       "locked": {
         "lastModified": 1743862127,
@@ -666,7 +682,7 @@
     "utils_5": {
       "inputs": {
         "nix-systems": "nix-systems_5",
-        "nixpkgs": "nixpkgs_5"
+        "nixpkgs": "nixpkgs_6"
       },
       "locked": {
         "lastModified": 1743862127,
@@ -685,7 +701,7 @@
     "utils_6": {
       "inputs": {
         "nix-systems": "nix-systems_6",
-        "nixpkgs": "nixpkgs_6"
+        "nixpkgs": "nixpkgs_7"
       },
       "locked": {
         "lastModified": 1745390014,
