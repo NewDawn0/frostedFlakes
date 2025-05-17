@@ -1,8 +1,12 @@
 {
-  description = "Your awesome flake";
+  description = "Frosted flakes";
 
   inputs = {
-    utils.url = "github:NewDawn0/nixUtils";
+    nixpkgs.url = "github:NixOS/nixpkgs";
+    utils = {
+      url = "github:NewDawn0/nixUtils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # Configured programs
     ndnvim.url = "github:NewDawn0/nvimConfig";
     ndvscode.url = "github:NewDawn0/vscodeConfig";
@@ -12,12 +16,13 @@
       inputs.utils.follows = "utils";
     };
     # Bins
-    alpha = {
-      url = "github:NewDawn0/alpha";
-      inputs.utils.follows = "utils";
-    };
     ascii-weather = {
       url = "github:NewDawn0/asciiWeather";
+      inputs.utils.follows = "utils";
+    };
+    cheat = {
+      url = "github:NewDawn0/cheat.s";
+      inputs.nixpkgs.follows = "nixpkgs";
       inputs.utils.follows = "utils";
     };
     ex = {
@@ -60,8 +65,8 @@
       ins = {
         cfgs = [ "ndhelix" "ndnvim" "ndtmux" "ndvscode" ];
         bins = [
-          "alpha"
           "ascii-weather"
+          "cheat"
           "ex"
           "gen"
           "nixie-clock"

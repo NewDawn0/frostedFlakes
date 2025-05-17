@@ -67,8 +67,7 @@ Because what’s a flake collection without actual flakes? Here’s what’s ins
 
 ### 🛠️ Utilities (Small but Mighty)
 
-- **[alpha](https://github.com/NewDawn0/alpha)** – Fast alphabet cheatsheet. Because sometimes, "L-M-N-O-P" is hard. 🔠
-- **[ansi](https://github.com/NewDawn0/ansi)** – Quick reference for ANSI escape codes. Make your terminal ✨colorful✨.
+- **[cheat.s](https://github.com/NewDawn0/cheat.s)** – A cheatsheet for when your brain has more memory leaks than your code
 - **[asciiWeather](https://github.com/NewDawn0/asciiWeather)** – A screensaver that shows weather using ASCII art. Stay informed, the retro way. ☁️
 
 ### 📁 Navigation & File Management
