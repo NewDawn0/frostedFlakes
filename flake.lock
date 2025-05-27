@@ -72,11 +72,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1748353619,
-        "narHash": "sha256-pqmASe/OaN7Akk/tpPsHuv5plGhN/0r3+Gs4euSTdBI=",
+        "lastModified": 1748354270,
+        "narHash": "sha256-KJRyfcSi1HgnL6GilUHzL3T+G2Iub5QNPB9G+iZHcUI=",
         "owner": "NewDawn0",
         "repo": "cheat.s",
-        "rev": "b10aaef4f67a495b6311d8c1f02203f4164054c3",
+        "rev": "89f1aeb48315a4eb9ce81631d6f6911bfb4d26a7",
         "type": "github"
       },
       "original": {
@@ -416,11 +416,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1748353428,
-        "narHash": "sha256-akmuX6kbhlWkB8LnKArueLarBLof1dIDeMTPEHoEM2U=",
+        "lastModified": 1748353928,
+        "narHash": "sha256-Wqws25VekSYzzPz7Q94T6LYl70QcKJ1bXlF6BN19OfA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "bfbe71a22349cc2c359a0334d4ca12308bafe37a",
+        "rev": "1f18ac0a2e6a2d44f00eeff7688db31bca228d45",
         "type": "github"
       },
       "original": {
