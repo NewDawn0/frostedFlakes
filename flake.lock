@@ -213,11 +213,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1748415216,
-        "narHash": "sha256-9ZhgsJ9+0hn6HHQDSX2beTeclxf1OafMdLaSamccDt0=",
+        "lastModified": 1749027611,
+        "narHash": "sha256-zhE+cGlGzH02HVx1li9a6y4+9mT8GSTkLaXKRiTE9oA=",
         "owner": "NewDawn0",
         "repo": "tmuxConfig",
-        "rev": "c8ef3659444ad2a4a87e924642fbbd8617553126",
+        "rev": "22ba7060ad22999836a3c79ec6269a7f3859b8f4",
         "type": "github"
       },
       "original": {
@@ -416,11 +416,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1748997702,
-        "narHash": "sha256-Be02KDDvtp35AVt6ws17CpA7pOpEqHTKi2hPC9Y8qSc=",
+        "lastModified": 1749027218,
+        "narHash": "sha256-sM9h84zlsx/r8303N08g1bCeE/EBERT0z+aZ+cB+Oy0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9aee993c8ab38064128d6611e441482d2ed9b8bd",
+        "rev": "adec134fc27c6c2b698125c7ab3c20b864c11e51",
         "type": "github"
       },
       "original": {
