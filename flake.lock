@@ -41,6 +41,29 @@
         "type": "github"
       }
     },
+    "build-all": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": [
+          "utils"
+        ]
+      },
+      "locked": {
+        "lastModified": 1752686062,
+        "narHash": "sha256-g8s4eQDY4JQwWcqM2U++f1HxtGHFA6G3zSyMAsKeneI=",
+        "owner": "NewDawn0",
+        "repo": "buildAll",
+        "rev": "4ee77b1e5b67d07186a160cda0fe4a1ef98c2050",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NewDawn0",
+        "repo": "buildAll",
+        "type": "github"
+      }
+    },
     "build-nvim": {
       "inputs": {
         "utils": [
@@ -505,6 +528,7 @@
     "root": {
       "inputs": {
         "ascii-weather": "ascii-weather",
+        "build-all": "build-all",
         "cheat": "cheat",
         "ex": "ex",
         "gen": "gen",
