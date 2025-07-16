@@ -19,6 +19,12 @@
     ascii-weather = {
       url = "github:NewDawn0/asciiWeather";
       inputs.utils.follows = "utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    build-all = {
+      url = "github:NewDawn0/buildAll";
+      inputs.utils.follows = "utils";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     cheat = {
       url = "github:NewDawn0/cheat.s";
@@ -28,35 +34,43 @@
     ex = {
       url = "github:NewDawn0/ex";
       inputs.utils.follows = "utils";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     gen = {
       url = "github:NewDawn0/gen";
       inputs.utils.follows = "utils";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixie-clock = {
       url = "github:NewDawn0/nixieClock";
       inputs.utils.follows = "utils";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     note = {
       url = "github:NewDawn0/note";
       inputs.utils.follows = "utils";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     notify = {
       url = "github:NewDawn0/notify";
       inputs.utils.follows = "utils";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     pac.url = "github:NewDawn0/pac";
     shredder = {
       url = "github:NewDawn0/shredder";
       inputs.utils.follows = "utils";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     translate = {
       url = "github:NewDawn0/translate";
       inputs.utils.follows = "utils";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     vocab = {
       url = "github:NewDawn0/vocab";
       inputs.utils.follows = "utils";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -66,6 +80,7 @@
         cfgs = [ "ndhelix" "ndnvim" "ndtmux" "ndvscode" ];
         bins = [
           "ascii-weather"
+          "build-all"
           "cheat"
           "ex"
           "gen"
