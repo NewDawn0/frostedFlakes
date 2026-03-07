@@ -436,11 +436,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1772758453,
-        "narHash": "sha256-Vlb7mKH05KD5YTbRpVi7lQacPLwWU7otYfls5wCpZGg=",
+        "lastModified": 1772844302,
+        "narHash": "sha256-8nBHYqXe/C3bu/52lPcGG49US3Vzqwykgj40XWTSVhA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b631cc1d66f4f8b52407faf54cca0b9766dbf828",
+        "rev": "ca36ac6ac9dd4d75ae8b3ec715793162eb600927",
         "type": "github"
       },
       "original": {
